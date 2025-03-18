@@ -1,0 +1,897 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (-0.1078181172098948, 2.357759543540911, 0.5726789874703841)
+                double3 target = (1.2264805383167994, -11.543931917147862, -0.12027718440331303)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./iqr_bunker.usda"
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "iqr_bunker_robot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "iqr_bunker_robot" (
+    prepend payload = @./configuration/iqr_bunker_physics.usda@
+    variants = {
+        string Physics = "PhysX"
+        string Sensor = "Sensors"
+    }
+    prepend variantSets = ["Physics", "Sensor"]
+)
+{
+    quatd xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    over "joints"
+    {
+        over "joint1"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 125
+            float state:angular:physics:position = 0.00000441315
+            float state:angular:physics:velocity = 0
+        }
+
+        over "joint2"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -90
+            float physics:upperLimit = 0
+            float state:angular:physics:position = 0.5343203
+            float state:angular:physics:velocity = 0
+        }
+
+        over "joint3"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -60
+            float physics:upperLimit = 0
+            float state:angular:physics:position = 0.06751974
+            float state:angular:physics:velocity = 0
+        }
+
+        over "joint4"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -90
+            float physics:upperLimit = 90
+            float state:angular:physics:position = -0.19503434
+            float state:angular:physics:velocity = 0
+        }
+
+        over "joint5"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -360
+            float physics:upperLimit = 360
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "joint6"
+        {
+            float drive:angular:physics:damping = 152
+            float drive:angular:physics:stiffness = 380
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_1"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -17.990875
+            float physics:upperLimit = 127.769585
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_0"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -59.98868
+            float physics:upperLimit = 59.98868
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_2"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -28.991661
+            float physics:upperLimit = 108.00254
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_3"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -20.970255
+            float physics:upperLimit = 116.99798
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_12"
+        {
+            float drive:angular:physics:targetPosition = 0
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -19.996227
+            float physics:upperLimit = 119.97736
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_13"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -90
+            float physics:upperLimit = 0
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_14"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -68.75494
+            float physics:upperLimit = 108.86198
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_15"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -76.776344
+            float physics:upperLimit = 107.71606
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_5"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -17.990875
+            float physics:upperLimit = 127.769585
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_4"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -59.98868
+            float physics:upperLimit = 59.98868
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_6"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -28.991661
+            float physics:upperLimit = 108.00254
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_7"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -20.970255
+            float physics:upperLimit = 116.99798
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_9"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -17.990875
+            float physics:upperLimit = 127.769585
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_8"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -59.98868
+            float physics:upperLimit = 59.98868
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_10"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -28.991661
+            float physics:upperLimit = 108.00254
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "a_11"
+        {
+            bool physics:collisionEnabled = 0
+            float physics:lowerLimit = -20.970255
+            float physics:upperLimit = 116.99798
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "left_wheel_base_3_joint"
+        {
+            float drive:angular:physics:damping = 10000000
+            float drive:angular:physics:maxForce = 100000000
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.0009143831, 0.29999995, 0.092190355)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = 860
+        }
+
+        over "right_wheel_base_3_joint"
+        {
+            float drive:angular:physics:damping = 10000000
+            float drive:angular:physics:maxForce = 100000000
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.0009143831, -0.29999995, 0.092190355)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = 860
+        }
+
+        over "left_wheel_base_1_joint"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.25969627, 0.29999995, 0.090027645)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 5.7046528e-9, 4.910788e-9, 7.370797e-8)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = inf
+        }
+
+        over "left_wheel_base_5_joint"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.3003479, 0.29999995, 0.09605149)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 5.7046528e-9, 4.910788e-9, 7.370797e-8)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = inf
+        }
+
+        over "right_wheel_base_1_joint"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.25969622, -0.29999995, 0.09002772)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 5.5734213e-9, -1.7390653e-7, 7.378028e-8)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = inf
+        }
+
+        over "right_wheel_base_5_joint"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.30034783, -0.29999995, 0.09605157)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 6.0196945e-9, -3.5272382e-7, 7.411657e-8)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -inf
+            float physics:upperLimit = inf
+            float physxJoint:maxJointVelocity = inf
+        }
+    }
+
+    over "base_footprint" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI"]
+        customData = {
+            dictionary physics = {
+                bool localSpaceVelocities = 0
+            }
+        }
+    )
+    {
+        vector3f physics:angularVelocity = (-0.000012998426, -3.5756767, 0.000009864606)
+        point3f physics:centerOfMass = (0, 0, 0.25233)
+        float3 physics:diagonalInertia = (0.1457, 0.1453, 0.00187)
+        float physics:mass = 800
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.008896098, -1.2815278e-8, -0.0162131)
+        bool physxArticulation:enabledSelfCollisions = 1
+        float physxRigidBody:angularDamping = 0
+        float physxRigidBody:maxAngularVelocity = 100000000000
+        float physxRigidBody:maxLinearVelocity = 100000000000
+        quatd xformOp:orient = (0.9999936986642245, 6.100163125081314e-8, 0.003550018568811466, 3.936657035812552e-8)
+        double3 xformOp:translate = (-0.0015688873827457428, 8.515780791640282e-8, 0.0018184259533882141)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_1"
+    {
+        vector3f physics:angularVelocity = (-0.000013123228, -3.5756767, -0.0000059454037)
+        float physics:mass = 1.6123
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.034785327, 1.2552007e-7, -0.00018383045)
+        quatd xformOp:orient = (0.9999936984798219, 8.144942718476338e-8, 0.0035500705119279044, 2.7706846135479725e-8)
+        double3 xformOp:translate = (0.2559628486633301, 4.1443854570388794e-8, 0.5268652439117432)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_2"
+    {
+        vector3f physics:angularVelocity = (-0.000022209962, -6.066595, -0.000005886578)
+        float physics:mass = 5.5186
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.057871073, 2.1009909e-7, -0.00024551616)
+        quatd xformOp:orient = (0.5005542744559285, 0.500556113504737, 0.49944329478195837, -0.4994450829213095)
+        double3 xformOp:translate = (0.2559628486633301, 7.450580596923828e-8, 0.5268652439117432)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_3"
+    {
+        vector3f physics:angularVelocity = (0.000048191392, 12.915852, 3.4800988e-7)
+        float physics:mass = 2.8536
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.046141714, 1.7326838e-7, -0.00017813862)
+        quatd xformOp:orient = (0.5008483977986614, 0.5008502454341383, 0.4991483838645586, -0.4991500825968845)
+        double3 xformOp:translate = (0.2550140917301178, 8.195638656616211e-8, 0.9538641571998596)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_4"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        float physics:mass = 0.67058
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (-0.000003844499299284006, -0.0000012814998305626102, 0.7071068109830623, -0.7071067513784192)
+        double3 xformOp:translate = (0.253799706697464, -0.1409999579191208, 1.3108620643615723)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_5"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        float physics:mass = 0.7269
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.000001820117176814238, 0.0000036039091355285466, 0.000001727874177942504, 0.9999999999903569)
+        double3 xformOp:translate = (0.25380057096481323, -0.1409999579191208, 1.4268620014190674)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "arm_link_6"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        float physics:mass = 0.46689
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (-0.00000382959862325773, -0.000001320615433395279, 0.707106840785389, -0.7071067215760976)
+        double3 xformOp:translate = (0.2538001835346222, -0.24599993228912354, 1.426862359046936)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "left_wheel_base_1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial_smooth> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.0000129984255, -3.5756764, 0.000009864606)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.005298738, 2.5641889e-8, 0.0024668602)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.1, 2)
+        double3 xformOp:translate = (0.25876, 0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "left_wheel_base_3" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.000012998427, -3.5756855, 0.000009864608)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.0055943076, -7.658231e-8, -0.034976363)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.5, 2)
+        double3 xformOp:translate = (0, 0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "left_wheel_base_5" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial_smooth> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.000012998427, -3.5756855, 0.000009864608)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.0055943076, -7.658231e-8, -0.034976363)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.1, 2)
+        double3 xformOp:translate = (-0.30122727155685425, 0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "right_wheel_base_1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial_smooth> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.000012998431, -3.5756953, 0.000009864608)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.0052986336, 2.5641873e-8, 0.002466995)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.1, 2)
+        double3 xformOp:translate = (0.25876, -0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "right_wheel_base_3" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.000012998431, -3.5756953, 0.000009864608)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.0052986336, 2.5641873e-8, 0.002466995)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.5, 2)
+        double3 xformOp:translate = (0, -0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "right_wheel_base_5" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </iqr_bunker_robot/PhysicsMaterial_smooth> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        vector3f physics:angularVelocity = (-0.000012998428, -3.5757039, 0.000009864608)
+        point3f physics:centerOfMass = (0, 0, 0)
+        bool physics:kinematicEnabled = 0
+        float physics:mass = 80
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-0.0055942014, -7.6582324e-8, -0.03497623)
+        float physxRigidBody:maxAngularVelocity = 10000000
+        float physxRigidBody:maxLinearVelocity = 10000000
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (2, 0.1, 2)
+        double3 xformOp:translate = (-0.3012271523475647, -0.29999995, 0.094)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "mcp_joint"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49979817969805346, -0.49940337558962433, 0.5006477418036597, -0.5001498641878223)
+        double3 xformOp:translate = (0.1907069981098175, -0.2930358946323395, 1.3739452362060547)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "pip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500596222503479, -0.49935179893884807, 0.5002015227538315, 0.49984961693146457)
+        double3 xformOp:translate = (0.20522254705429077, -0.28082504868507385, 1.3358546495437622)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "dip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.5001499626222485, 0.5006477231416986, 0.4994034165786925, 0.4997980589313303)
+        double3 xformOp:translate = (0.1909002810716629, -0.2937888205051422, 1.3208445310592651)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "fingertip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500150014733392, 0.5006477454963516, 0.4994033494708145, 0.49979805144572104)
+        double3 xformOp:translate = (0.19109658896923065, -0.293756902217865, 1.2847445011138916)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "pip_4"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.0002791737367570201, -0.7065422074963139, 0.707670761862225, 0.0003519852247819765)
+        double3 xformOp:translate = (0.2150087058544159, -0.29603028297424316, 1.4362401962280273)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "thumb_pip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49979820583140555, -0.49940332717481134, 0.5006476635401473, -0.5001499647567997)
+        double3 xformOp:translate = (0.20071005821228027, -0.2960190773010254, 1.4492416381835938)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "thumb_dip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.00027924243850907185, -0.706542207553848, 0.707670761824645, 0.00035189078229691946)
+        double3 xformOp:translate = (0.18370860815048218, -0.29597899317741394, 1.4347434043884277)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "thumb_fingertip"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (-0.0003519103541105087, 0.707670821420893, 0.7065421478457634, 0.00027925987332606)
+        double3 xformOp:translate = (0.13710865378379822, -0.2959044277667999, 1.434548258781433)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "mcp_joint_2"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49979817969805346, -0.49940337558962433, 0.5006477418036597, -0.5001498641878223)
+        double3 xformOp:translate = (0.23615692555904388, -0.29310843348503113, 1.3739405870437622)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "pip_2"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500596222503479, -0.49935179893884807, 0.5002015227538315, 0.49984961693146457)
+        double3 xformOp:translate = (0.25067248940467834, -0.2808975875377655, 1.3358500003814697)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "dip_2"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.5001499626222485, 0.5006477231416986, 0.4994034165786925, 0.4997980589313303)
+        double3 xformOp:translate = (0.23635022342205048, -0.29386135935783386, 1.3208398818969727)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "fingertip_2"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500150014733392, 0.5006477454963516, 0.4994033494708145, 0.49979805144572104)
+        double3 xformOp:translate = (0.23654653131961823, -0.29382944107055664, 1.2847398519515991)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "mcp_joint_3"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49979817969805346, -0.49940337558962433, 0.5006477418036597, -0.5001498641878223)
+        double3 xformOp:translate = (0.28160685300827026, -0.29318100214004517, 1.3739358186721802)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "pip_3"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500596222503479, -0.49935179893884807, 0.5002015227538315, 0.49984961693146457)
+        double3 xformOp:translate = (0.29612240195274353, -0.28097015619277954, 1.3358452320098877)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "dip_3"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.5001499626222485, 0.5006477231416986, 0.4994034165786925, 0.4997980589313303)
+        double3 xformOp:translate = (0.28180012106895447, -0.2939339280128479, 1.3208351135253906)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    over "fingertip_3"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500150014733392, 0.5006477454963516, 0.4994033494708145, 0.49979805144572104)
+        double3 xformOp:translate = (0.2819964289665222, -0.2939020097255707, 1.284735083580017)
+
+        over "collisions"
+        {
+            rel physics:simulationOwner
+        }
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:staticFriction = 0.8
+    }
+
+    def Material "PhysicsMaterial_smooth" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        custom uniform bool paused = 0 (
+            customData = {
+                bool nonpersistant = 1
+            }
+            hidden = true
+        )
+        float physics:dynamicFriction = 0
+        float physics:staticFriction = 0
+    }
+    variantSet "Physics" = {
+        "None" (
+            prepend references = @configuration/iqr_bunker_base.usda@
+        ) {
+            over "joints" (
+                active = false
+            )
+            {
+            }
+
+        }
+        "PhysX" (
+            prepend payload = @configuration/iqr_bunker_physics.usda@
+        ) {
+
+        }
+    }
+    variantSet "Sensor" = {
+        "None" {
+
+        }
+        "Sensors" (
+            prepend payload = @configuration/iqr_bunker_sensor.usda@
+        ) {
+
+        }
+    }
+}
+
